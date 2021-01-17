@@ -37,7 +37,8 @@ def verigir():
         verikontrol(kut)
         veriekle(adtext.get(),teltext.get(),emailtext.get(),kut)
         
-
+    var1=IntVar()
+    var2=IntVar()
     frame1=Frame(pencere)
     
     adetiket=Label(frame1,text="Ad-Soyad:",font="Times 20")
@@ -48,7 +49,7 @@ def verigir():
     emailtext=Entry(frame1,font="Times 20")
     cik=Button(frame1,text="Cik",font="Times 20",command=frame1.destroy)
     kaydet=Button(frame1,text="Kaydet",font="Times 20",command=verikaydet)
-
+    check1=Checkbutton(frame1,text="Python",font="Times 20",variable=var1,onvalue=1,offvalue=0)
     frame1.grid()
     
     adetiket.grid(row=1,column=1,padx=0,pady=10)
@@ -57,7 +58,7 @@ def verigir():
     teltext.grid(row=2,column=2,padx=10)
     emailetiket.grid(row=3,column=1,padx=0,pady=10)
     emailtext.grid(row=3,column=2,padx=10)
-
+    check1.grid(row=4,column=1)
 
     kaydet.grid(row=1,column=3,pady=10)
     cik.grid(row=2,column=3)
