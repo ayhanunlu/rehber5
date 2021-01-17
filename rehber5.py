@@ -4,7 +4,7 @@ pencere=Tk()
 pencere.title("Rehber Programı 1.0")
 pencere.geometry("600x300+100+100")
 global aramaindex
-global toplamkayit
+#global toplamkayit
 
 aramaindex=-1
 def verikontrol(kut):
