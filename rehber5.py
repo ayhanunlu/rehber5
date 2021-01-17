@@ -5,6 +5,7 @@ pencere.title("Rehber Programı 1.0")
 pencere.geometry("600x300+100+100")
 global aramaindex
 global toplamkayit
+
 aramaindex=-1
 def verikontrol(kut):
     try:
@@ -14,8 +15,10 @@ def verikontrol(kut):
     except FileNotFoundError:
         kut=[]
         print ("Hata Var")
+        return kut
 kut=[]
 kut=verikontrol(kut)
+print (f"kut:{kut}")
 
         
 def veriyaz(kut):
