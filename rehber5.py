@@ -103,7 +103,10 @@ def verisor():
         ad=ad2text.get()
         tel=tel2text.get()
         email=email2text.get()
-        kut2=ad+","+tel+","+email
+        var11=str(var1.get())
+        var22=str(var2.get())
+        var33=str(var3.get())
+        kut2=ad+","+tel+","+email+","+var11+","+var22+","+var33+"\n"
         kut.pop(aramaindex)
         kut.insert(aramaindex,kut2)
         veriyaz(kut)
