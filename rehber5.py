@@ -50,6 +50,7 @@ def verigir():
     cik=Button(frame1,text="Cik",font="Times 20",command=frame1.destroy)
     kaydet=Button(frame1,text="Kaydet",font="Times 20",command=verikaydet)
     check1=Checkbutton(frame1,text="Python",font="Times 20",variable=var1,onvalue=1,offvalue=0)
+    check1=Checkbutton(frame1,text="C#",font="Times 20",variable=var2,onvalue=1,offvalue=0)
     #sonuc check1.get() ile alınır if check1.get()==1 gibi
     frame1.grid()
     
@@ -60,6 +61,7 @@ def verigir():
     emailetiket.grid(row=3,column=1,padx=0,pady=10)
     emailtext.grid(row=3,column=2,padx=10)
     check1.grid(row=4,column=1)
+    check2.grid(row=4,column=2)
 
     kaydet.grid(row=1,column=3,pady=10)
     cik.grid(row=2,column=3)
