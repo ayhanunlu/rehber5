@@ -2,7 +2,7 @@ from tkinter import *
 import tkinter.messagebox
 pencere=Tk()
 pencere.title("Rehber Programı 1.0")
-pencere.geometry("600x300+100+100")
+pencere.geometry("600x400+100+100")
 global aramaindex
 #global toplamkayit
 
@@ -135,7 +135,9 @@ def verisor():
                 kaydet2["state"]="normal"
                 break
 
-        
+    var1=IntVar()
+    var2=IntVar()
+    var3=IntVar()
     frame2=Frame(pencere)
     arananetiket=Label(frame2,text="Aranan Kişi:",font="Times 20")
     aranantext=Entry(frame2,font="Times 20")
@@ -145,12 +147,15 @@ def verisor():
     tel2text=Entry(frame2,font="Times 20")
     email2etiket=Label(frame2,text="E-mail:",font="Times 20")
     email2text=Entry(frame2,font="Times 20")
+    check1=Checkbutton(frame2,text="Python",font="Times 20",variable=var1,onvalue=1,offvalue=0)
+    check2=Checkbutton(frame2,text="C#",font="Times 20",variable=var2,onvalue=1,offvalue=0)
+    radio1=Radiobutton(frame2,text="Bay",font="Times 20",variable=var3,value=1)
+    radio2=Radiobutton(frame2,text="Bayan",font="Times 20",variable=var3,value=2)
     cik2=Button(frame2,text="Cik",font="Times 20",command=frame2.destroy)
     kaydet2=Button(frame2,text="Düzelt",font="Times 20",state=DISABLED,command=duzelt)
     sil=Button(frame2,text="Sil",font="Times 20",state=DISABLED)
     
-    
-
+   
     arama=Button(frame2,text="Ara",font="Times 20",command=aramayap)
 
 
@@ -163,7 +168,10 @@ def verisor():
     tel2text.grid(row=5,column=2,padx=10)
     email2etiket.grid(row=6,column=1,padx=0,pady=10)
     email2text.grid(row=6,column=2,padx=10)
-
+    check1.grid(row=7,column=1)
+    check2.grid(row=7,column=2)
+    radio1.grid(row=8,column=1)
+    radio2.grid(row=8,column=2)
     arama.grid(row=1,column=3)
     kaydet2.grid(row=4,column=3,pady=10)
     cik2.grid(row=6,column=3)
