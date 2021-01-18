@@ -18,14 +18,15 @@ def verikontrol(kut):
         return kut
 kut=[]
 kut=verikontrol(kut)
-print (f"kut:{kut}")
+
 
         
 def veriyaz(kut):
     with open("verireh.dat","w",encoding="utf-8") as dosya:
         dosya.writelines(kut)
-def veriekle(ad,tel,email,kut):
-    kut.append(ad+","+tel+","+email+"\n")
+def veriekle(ad,tel,email,var1,var2,var3,kut):
+    kut.append(ad+","+tel+","+email+","+str(var1)+","+str(var2)+","+str(var3)+"\n")
+    print (kut)
     veriyaz(kut)
     tkinter.messagebox.showinfo("Veri Ekleme", "Veri Kaydedildi")
     
@@ -35,8 +36,11 @@ def verigir():
     def verikaydet():
         #print (kut)
         verikontrol(kut)
-        veriekle(adtext.get(),teltext.get(),emailtext.get(),kut)
-        
+        veriekle(adtext.get(),teltext.get(),emailtext.get(),var1.get(),var2.get(),var3.get(),kut)
+        #print (check1.get())
+        #print (var1.get()) 
+        #print (var2.get())
+        #print (var3.get())
     var1=IntVar()
     var2=IntVar()
     var3=IntVar()
