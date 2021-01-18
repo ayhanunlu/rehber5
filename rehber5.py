@@ -130,7 +130,13 @@ def verisor():
                 tel2text.delete(0,"end")
                 tel2text.insert(0,kut3[1])
                 email2text.delete(0,"end")
-                email2text.insert(0,kut3[2])            
+                email2text.insert(0,kut3[2])
+                var1.set(int(kut3[3]))
+                var2.set(int(kut3[4]))
+                var3.set(int(kut3[5]))
+                
+
+                
                 #kaydet2(state=NORMAL)
                 kaydet2["state"]="normal"
                 break
