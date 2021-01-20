@@ -96,6 +96,18 @@ def verilistele():
 def verisor():
     verikontrol(kut)
     toplamkayit=len(kut)
+    def silme():
+        global aramaindex
+        sonuc=tkinter.messagebox.askyesno(title="Dikkat!", message="Veri silinecek. Eminmisiniz?")
+        if sonuc==True:
+            kut.pop(aramaindex)
+            sil["state"]=DISABLED
+            veriyaz(kut)
+            ad2text.delete(0,"end")
+            tel2text.delete(0,"end")
+            email2text.delete(0,"end")
+            tkinter.messagebox.showinfo(title="Bilgi", message="Veri Silindi...")
+
     
     def duzelt():
         global aramaindex
@@ -142,6 +154,7 @@ def verisor():
                 
                 #kaydet2(state=NORMAL)
                 kaydet2["state"]="normal"
+                sil["state"]="normal"
                 break
 
     var1=IntVar()
@@ -162,7 +175,7 @@ def verisor():
     radio2=Radiobutton(frame2,text="Bayan",font="Times 20",variable=var3,value=2)
     cik2=Button(frame2,text="Cik",font="Times 20",command=frame2.destroy)
     kaydet2=Button(frame2,text="Düzelt",font="Times 20",state=DISABLED,command=duzelt)
-    sil=Button(frame2,text="Sil",font="Times 20",state=DISABLED)
+    sil=Button(frame2,text="Sil",font="Times 20",state=DISABLED,command=silme)
     
    
     arama=Button(frame2,text="Ara",font="Times 20",command=aramayap)
