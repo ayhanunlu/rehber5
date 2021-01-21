@@ -4,7 +4,7 @@ pencere=Tk()
 pencere.title("Rehber Programı 1.0")
 pencere.geometry("600x400+100+100")
 global aramaindex
-#global toplamkayit
+global toplamkayit
 
 aramaindex=-1
 def verikontrol(kut):
@@ -94,10 +94,13 @@ def verilistele():
 
     frame3.mainloop()
 def verisor():
+    global toplamkayit
     verikontrol(kut)
     toplamkayit=len(kut)
     def silme():
         global aramaindex
+        global kut
+        global toplamkayit
         sonuc=tkinter.messagebox.askyesno(title="Dikkat!", message="Veri silinecek. Eminmisiniz?")
         if sonuc==True:
             kut.pop(aramaindex)
@@ -106,6 +109,9 @@ def verisor():
             ad2text.delete(0,"end")
             tel2text.delete(0,"end")
             email2text.delete(0,"end")
+            verikontrol(kut)
+            toplamkayit=len(kut)
+            aramaindex=-1
             tkinter.messagebox.showinfo(title="Bilgi", message="Veri Silindi...")
 
     
@@ -127,13 +133,16 @@ def verisor():
 
     def aramayap():
         global aramaindex
+        global kut
+        global toplamkayit
         
         
         while aramaindex<=toplamkayit-1:
-            
+       
             aramaindex+=1
             if aramaindex>=toplamkayit:
                 aramaindex=0
+            
             kut2=kut[aramaindex]
             kut3=kut2.split(",")
             #print (kut3[1]) #aranan yer
